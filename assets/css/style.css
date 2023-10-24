@@ -92,7 +92,18 @@ h1 {
   font-size: 5rem;
   font-weight: bold;
   letter-spacing: -0.03em;
-  margin-bottom: 0.7em;
+  margin-bottom: 0;
+}
+h1 > div {
+  position: relative;
+  height: 10rem;
+  display: inline-block;
+}
+h1 img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 p,
 address,
@@ -106,10 +117,14 @@ blockquote {
 h1 + p {
   color: #a0a0a0;
 }
-article img {
+article img:first-of-type {
+}
+article > img {
   border: 5px solid rgb(0, 160, 198);
   width: 8rem;
   outline: 5px solid #a02571;
+  float: left;
+  margin-right: 2rem;
 }
 article h2 {
   font-weight: bold;
@@ -277,7 +292,7 @@ footer a {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   table {
     margin: 10rem;
     margin-inline: auto;
@@ -293,24 +308,21 @@ footer a {
   blockquote {
     font-size: 1.5em;
   }
-  .squares-fixed {
-    position: sticky;
-  }
 
   .square-plus {
     bottom: 55%;
-    left: 90%;
+    right: 0;
   }
   .square-calendar {
     bottom: 45%;
-    left: 90%;
+    right: 0;
   }
   .square-up {
-    left: 90%;
+    right: 0;
   }
 }
 
-@media screen and (min-width: 1199px) {
+@media screen and (min-width: 1200px) {
   body {
     padding: 15rem;
     padding-top: 3rem;
@@ -405,20 +417,16 @@ footer a {
     height: 3rem;
   }
 
-  .squares-fixed {
-    position: sticky;
-  }
-
   .square-plus {
-    bottom: 80%;
-    left: 100%;
+    top: 0;
+    right: 0;
   }
   .square-calendar {
-    bottom: 70%;
-    left: 90%;
+    top: 80px;
+    right: 0;
   }
   .square-up {
-    left: 90%;
+    right: 0;
   }
 }
 
